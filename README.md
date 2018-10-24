@@ -2,9 +2,9 @@
 
 INTEGRANTES DEL PROYECTO
 
-<a href="https://darnaik.github.io">Erix Mamani</a>
-<a href="#">Joel Moreno</a>
-<a href="#">Alejandro Reñones</a>
+<a href="https://darnaik.github.io">Erix Mamani</a><br>
+<a href="#">Joel Moreno</a><br>
+<a href="https://IamJikan.github.io">Alejandro Reñones</a><br>
 
 En este proyecto simularemos la creación de un sitio web desde zero. Se trata de un sito web que iría integrado en una intranet, donde los trabajadores de una entidad/casal pueden visualizar la disponibilidad de los recursos siguientes de ésta:
 
