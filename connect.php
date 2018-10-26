@@ -1,5 +1,5 @@
 <?php
-  $ip="172.24.17.72";
+  $ip="172.24.17.42";
   $user="erix";
   $db="db_rec_emp";
   $pw="1234";
@@ -11,7 +11,7 @@
     echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
     exit;
   } else {
-    echo "Successful connect<br>";
+    // echo "Successful connect<br>";
   }
   
 ?>
