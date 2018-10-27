@@ -13,8 +13,12 @@
 	    exit;
 	}
 
-	$q = "SELECT * FROM `tbl_empleado`";
-	$q_recursos = mysqli_query($link, $q);
+	
+	$q = "SELECT * FROM tbl_empleado WHERE Empleado_ID = " . $_GET['j'];
+	$query = mysqli_query($link, $q);
+	while ($i = mysqli_fetch_array($query)) {
+		echo "Hola $i[Empleado_Nombre]";
+	} 
 
 ?>
 
@@ -31,7 +35,7 @@
 		<div class="header">
 			<!-- Encabezado de la página -->
 			<div class="menu-nav">
-				<a href="reserva.php">
+				<a href="index.php">
 					<div id="nav-reserva" class="nav-activo">
 						<p>Reservas</p>
 					</div>
@@ -66,6 +70,11 @@
             // <div class='celda-nombre'><b>" . utf8_encode($rec['Recurso_Nombre']) . "</b>" . utf8_encode($rec['Recurso_Tipo']) . "</div>
             // <div class='celda-estado'>" . $rec['Recurso_Estado'] . "</div></div>";
 
+			/* Reserva exitosa */
+            if(isset($_GET['GG'])) {
+                echo "<span style='color:white'>Reserva exitosa.</span>";
+			}
+			
             if ($rec['Recurso_Estado']=="Disponible") {
               echo "<div class='registro-recurso' class='si_reserva'>
 		              	<div class='celda-imagen'>
@@ -78,7 +87,7 @@
 		            	<div class='celda-estado'>" 
 		            		. $rec['Recurso_Estado'] . "
 		            	</div> 
-		            	<div class='celda-reserva'>
+		            	<div class='clase-disponible'>
 		            		<form action='reserva.proc.php' method='POST'>
 		            			<input type='submit' class='btn_reserva' value='Reservar' name='btn_reservar'></input>
 		            			<input type='hidden' name='user' value='nombre'></input>
@@ -99,7 +108,7 @@
 	   		        <div class='celda-estado'>" 
 	   		        	. $rec['Recurso_Estado'] . 
 	   		        "</div>
-	   		        <div class='celda-reserva'>
+	   		        <div class='clase-disponible'>
 	   		        	<form action='reserva.proc.php' method='POST' onsubmit='return false'>
 	   		        		<input type='submit' class='btn_reserva_NA' value='Reservar' name='btn_reservar'>
 	   		        		</input></form>
