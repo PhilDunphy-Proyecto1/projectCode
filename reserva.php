@@ -1,10 +1,10 @@
 <?php
 	//conectamos a la BD 1819_exemple
 	// IP Erix: 172.24.16.253:8080	user: root 	pwd: 1234
-	// IP Alex: 172.24.17.42  	user: admin 	pwd: 1234
+	// IP Alex: 172.24.17.171  	user: admin 	pwd: 1234
 	
 
-	$link = mysqli_connect('172.24.17.42', 'admin', '1234', 'db_rec_emp');
+	$link = mysqli_connect('172.24.17.171', 'joel', '1234', 'db_rec_emp');
 	
 	if (!$link) {
 	    echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
@@ -13,12 +13,8 @@
 	    exit;
 	}
 
-	
-	$q = "SELECT * FROM tbl_empleado WHERE Empleado_ID = " . $_GET['j'];
-	$query = mysqli_query($link, $q);
-	while ($i = mysqli_fetch_array($query)) {
-		echo "Hola $i[Empleado_Nombre]";
-	} 
+	$q = "SELECT * FROM `tbl_empleado`";
+	$q_recursos = mysqli_query($link, $q);
 
 ?>
 
@@ -35,7 +31,7 @@
 		<div class="header">
 			<!-- Encabezado de la página -->
 			<div class="menu-nav">
-				<a href="index.php">
+				<a href="reserva.php">
 					<div id="nav-reserva" class="nav-activo">
 						<p>Reservas</p>
 					</div>
@@ -56,11 +52,43 @@
 			// }
 		?> -->
 
-		<table>
+
+
+		<!-- ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡FILTRO!!!!!!!!!!!!!!!!!!!! -->
+		<div class="filtro">	
+			<form action="" method="POST">
+				<div class="titulo-filtro"><h2>BUSCAR: </h2></div>
+					<div class="texto-filtro">
+						<input type="text" name="nombre-recurso"></input>
+					</div>
+
+					<div class="tipo-filtro">
+						<select name="tipo">
+							<option>-- Tipo --</option>
+							<option value="1">Sala</option>
+							<option value="2">Material</option>
+						</select>	
+					</div>
+					<div class="estado-filtro">
+						<select name="estado">
+							<option>-- Estado --</option>
+							<option value="1">Disponible</option>
+							<option value="0">En uso</option>
+						</select>
+					</div>
+					<div class="submit-filtro">
+						<input type="submit" name="submit"></input>
+					</div>
+
+			</form>
+		</div>
+		<!-- ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡FILTRO!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
       <?php
       	require "connect.php";
         $q = "SELECT * FROM tbl_recurso";
         $query = mysqli_query($con,$q);
+
 
 
         if (mysqli_num_rows($query)) {
@@ -70,13 +98,8 @@
             // <div class='celda-nombre'><b>" . utf8_encode($rec['Recurso_Nombre']) . "</b>" . utf8_encode($rec['Recurso_Tipo']) . "</div>
             // <div class='celda-estado'>" . $rec['Recurso_Estado'] . "</div></div>";
 
-			/* Reserva exitosa */
-            if(isset($_GET['GG'])) {
-                echo "<span style='color:white'>Reserva exitosa.</span>";
-			}
-			
             if ($rec['Recurso_Estado']=="Disponible") {
-              echo "<div class='registro-recurso' class='si_reserva'>
+              echo "<div class='registro-recurso si_reserva'>
 		              	<div class='celda-imagen'>
 		              		<img class='img_recurso' src=".$rec['Recurso_Img'].">
 		              	</div>
@@ -84,10 +107,10 @@
 		            		<div class='nombre-titulo'>" . utf8_encode($rec['Recurso_Nombre']) . "</div>
 		            		<div class='nombre-tipoderecurso'>" . utf8_encode($rec['Recurso_Tipo']) . "</div>
 		            	</div>
-		            	<div class='celda-estado'>" 
+		            	<div class='celda-estado celda-estado-positivo'>" 
 		            		. $rec['Recurso_Estado'] . "
 		            	</div> 
-		            	<div class='clase-disponible'>
+		            	<div class='celda-reserva'>
 		            		<form action='reserva.proc.php' method='POST'>
 		            			<input type='submit' class='btn_reserva' value='Reservar' name='btn_reservar'></input>
 		            			<input type='hidden' name='user' value='nombre'></input>
@@ -97,7 +120,7 @@
             		</div>";
             } else {
 	            echo "
-	              <div class='no_reserva'>
+	              <div class='registro-recurso no_reserva'>
 	              	<div class='celda-imagen'>
 	              		<img class='img_recurso' src=".$rec['Recurso_Img'].">
 	              	</div>
@@ -105,10 +128,10 @@
 	            		<div class='nombre-titulo'>" . utf8_encode($rec['Recurso_Nombre']) . "</div>
 	            		<div class='nombre-tipoderecurso'>" . utf8_encode($rec['Recurso_Tipo']) . "</div>
 	            	</div>
-	   		        <div class='celda-estado'>" 
+	   		        <div class='celda-estado celda-estado-negativo'>" 
 	   		        	. $rec['Recurso_Estado'] . 
 	   		        "</div>
-	   		        <div class='clase-disponible'>
+	   		        <div class='celda-reserva'>
 	   		        	<form action='reserva.proc.php' method='POST' onsubmit='return false'>
 	   		        		<input type='submit' class='btn_reserva_NA' value='Reservar' name='btn_reservar'>
 	   		        		</input></form>
