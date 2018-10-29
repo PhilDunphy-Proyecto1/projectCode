@@ -133,14 +133,16 @@ a {
 	height: 100%;
 	/*display: none;*/
 	z-index: 2;
-	padding: 75px 200px;
+	padding: 55px 200px;
 }
 
 /*---------------------------------------------------------------*/
 /*FILTRO RECURSOS*/
 
 .filtro {
-	width: 100%;
+	width: 95%;
+	text-align: center;
+	margin-bottom: 100px;
 }
 
 .filtro  div {
@@ -164,6 +166,7 @@ a {
 
 .tipo-filtro {
 	/*display: inline-block;*/
+	margin-right: 5px;
 }
 
 .tipo-filtro select {
@@ -171,6 +174,7 @@ a {
 }
 
 .estado-filtro {
+	margin-right: 20px;
 	/*display: inline-block;*/
 }
 
@@ -179,22 +183,29 @@ a {
 }
 
 .submit-filtro input {
-	{
-      font-size: 1.3em;
+      font-size: 1em;
       text-align: center;
       text-decoration: none;
       border: 1px solid black;
-      border-radius: 24px;
+      border-radius: 3px;
       padding: 7px 12px;
-      margin: 4px 2px;
+      /*margin: 4px 2px;*/
       background-color: white;
       display: inline-flex;
 	justify-content: center;
 	/*text-align: center;*/
 	align-content: center;
 	flex-direction: column;
-    }
+	transition-duration: 0.4s;
+
 }
+
+
+.submit-filtro input:hover {
+      background-color: #34495E; /* Green */
+      color: white;
+      cursor: pointer;
+    }
 
 
 
@@ -290,7 +301,7 @@ a {
     }
 
     .btn_reserva:hover {
-      background-color: gray; /* Green */
+      background-color: #34495E; /* Green */
       color: white;
     }
 
@@ -320,4 +331,43 @@ a {
 .celda-estado-positivo {
 	color: green;
 	font-weight: bold;
+}
+
+
+/* -----------------------------------------------------------------------*/
+/* REGISTROS INCIDENCIAS */
+
+.registro-incidencia {
+	width: 100%;
+	display: inline-flex;
+	margin-bottom: 40px;
+	height: 90px;
+	display: flex;
+   	justify-content: center;
+   	align-items: center;
+   /*border-radius: 10px;*/
+}
+
+.celda-i-nombre {
+	width: 30%;
+}
+
+.incidencia-titulo {
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+.grado-critico {
+	color: red;
+	font-size: 1.2em; 
+}
+
+.grado-medio {
+	color: orange;
+	font-size: 1.2em; 
+}
+
+.grado-bajo {
+	color: blue;
+	font-size: 1.2em; 
 }
