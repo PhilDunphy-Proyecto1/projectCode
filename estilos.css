@@ -145,8 +145,13 @@ a {
 .registro-recurso {
 	/*width: 950px;*/
 	width: 100%;
-	display: inline-block;
+	display: inline-flex;
 	margin-bottom: 40px;
+	height: 90px;
+	/*display: flex;*/
+   justify-content: center;
+   align-items: center;
+   border-radius: 25px;
 
 }
 
@@ -156,11 +161,16 @@ a {
 	/*width: 100px;*/
 	width: 15%;
 	display: inline-block;
+	/*background-color: white;*/
 
 }
 
 .img_recurso {
 	width: 60px;
+	justify-content: center;
+	/*text-align: center;*/
+	align-content: center;
+	flex-direction: column;
 }
 
 .celda-nombre {
@@ -178,15 +188,22 @@ a {
 .celda-estado {
 	/*width: 200px;*/
 	width: 17%;
-	display: inline-block;
+	/*display: inline-block;*/
 	font-size: 1.2em;
 	border: 0px 1px solid black;
+	display: inline-flex;
+	/*padding: 0 0 20% 0;*/
+	/*vertical-align: center;*/
+	/*justify-content: center;
+	/*text-align: center;*/
+	/*align-content: center;
+	flex-direction: column;*/
 }
 
 .celda-reserva {
 	/*width: 200px;*/
 	width: 17%;
-	display: inline-block;
+	display: inline-flex;
 }
 
 .btn_reserva, .btn_reserva_NA {
@@ -198,6 +215,11 @@ a {
       padding: 7px 12px;
       margin: 4px 2px;
       background-color: white;
+      display: inline-flex;
+	justify-content: center;
+	/*text-align: center;*/
+	align-content: center;
+	flex-direction: column;
     }
 
     .btn_reserva {
@@ -208,11 +230,22 @@ a {
     }
 
     .btn_reserva:hover {
-      background-color: #10962C; /* Green */
+      background-color: gray; /* Green */
       color: white;
     }
 
     .btn_reserva_NA {
     opacity: 0.6;
     cursor: not-allowed;
+}
+
+.si_reserva {
+	/*background-color: green;*/
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.no_reserva {
+	border: 1px solid black;
+	/*background-color: red;*/
 }
