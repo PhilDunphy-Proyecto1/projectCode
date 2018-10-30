@@ -1,6 +1,6 @@
 <?php
-  $ip="172.24.17.42";
-  $user="erix";
+  $ip="172.24.17.49";
+  $user="joel";
   $db="db_rec_emp";
   $pw="1234";
   $con= mysqli_connect($ip,$user,$pw,$db);
