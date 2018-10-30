@@ -1,0 +1,383 @@
+* GENERALES */
+
+body {
+	margin: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+	/*display: inline-block;*/
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+/* ------------------------------------------------------------- */
+/* HEADER */
+
+
+.header {
+	height: 120px;
+	background-color: #34495E;
+	width: 100%;
+	/*position: 0;*/
+	/*position: fixed;*/
+	border-bottom: 1px solid black;
+	/*color: white;*/
+	/*margin-bottom: 150px;*/
+	/*display: none;*/
+
+}
+
+.header a {
+	color: white;
+}
+
+.menu-nav {
+	color: white;
+	width: 260px;
+	height: 40px;
+	/*background-color: lightgray;*/
+	float: right;
+	margin-top: 80px;
+	margin-right: 20px;
+	font-weight: bold;
+	font-size: 1.3em;
+	/*background: linear-gradient(bottom, rgb(126,181,232));*/
+}
+
+.menu-nav div {
+	float: left;
+	border-radius: 24px 24px 0 0;
+	/*background-color: #E4E4E4;*/
+	/*opacity: 0.5;*/
+	/*padding: 2px;
+	background-color: red;
+	width: 50%;
+	height: 100%;*/
+}
+
+.menu-nav p {
+	margin: auto;
+	/*text-align: center;*/
+}
+
+.menu-nav #nav-reserva {
+	height: 100%;
+	width: 49%;
+	/*background-color: green;*/
+	/*text-align: center;*/
+	/*margin: auto;*/
+	display: flex;
+	justify-content: center;
+	/*text-align: center;*/
+	align-content: center;
+	flex-direction: column;
+}
+
+.menu-nav #nav-incidencia {
+	height: 100%;
+	width: 49%;
+	/*background-color: red;*/
+	/*margin: auto;*/
+	/*vertical-align: center;*/
+	display: flex;
+	justify-content: center;
+	/*text-align: center;*/
+	align-content: center;
+	flex-direction: column;
+}
+
+/*#reserva {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+
+}
+
+#incidencia {
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	/*text-align: center;*/
+	/*align-content: center;
+	flex-direction: column;
+
+}*/
+
+
+.nav-activo {
+	background-color: white;
+	border: 1px solid black;
+	border-bottom: none;
+	color: black;
+}
+
+
+
+.menu-nav div:hover {
+	/*background-color: #1F2B37;*/
+	background-color: white;
+	border: 1px solid black;
+	border-bottom: none;
+	color: black;
+}
+
+.nav-activo:hover {
+	background-color: #1F2B37;
+	color: white;
+}
+
+.content {
+	/*margin-top: 150px;*/
+	height: 100%;
+	/*display: none;*/
+	z-index: 2;
+	padding: 55px 200px;
+}
+
+/*---------------------------------------------------------------*/
+/*FILTRO RECURSOS*/
+
+.filtro {
+	width: 95%;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.filtro  div {
+	display: inline-block;
+}
+
+.titulo-filtro {
+	/*display: inline-block;*/
+	width: 17.5%;
+}
+
+.texto-filtro {
+	/*display: inline-block;*/
+	width: 29%;
+}
+
+.texto-filtro input {
+	width: 95%;
+	height: 25px;
+}
+
+.tipo-filtro {
+	/*display: inline-block;*/
+	margin-right: 5px;
+	outline: none;
+}
+
+.tipo-filtro select {
+	height: 30px;
+	outline: none;
+}
+
+.estado-filtro {
+	margin-right: 20px;
+	outline: none;
+	/*display: inline-block;*/
+}
+
+.estado-filtro select {
+	height: 30px;
+	outline: none;
+}
+
+.submit-filtro input {
+      font-size: 1em;
+      text-align: center;
+      text-decoration: none;
+      border: 1px solid black;
+      border-radius: 3px;
+      padding: 7px 12px;
+      /*margin: 4px 2px;*/
+      background-color: white;
+      display: inline-flex;
+	justify-content: center;
+	/*text-align: center;*/
+	align-content: center;
+	flex-direction: column;
+	transition-duration: 0.4s;
+	outline: none;
+
+}
+
+
+.submit-filtro input:hover {
+      background-color: #34495E; /* Green */
+      color: white;
+      cursor: pointer;
+    }
+
+
+
+
+/* ------------------------------------------------------------- */
+/* TABLA RECURSOS */
+
+.registro-recurso {
+	/*width: 950px;*/
+	width: 100%;
+	display: inline-flex;
+	margin-bottom: 40px;
+	height: 90px;
+	/*display: flex;*/
+   justify-content: center;
+   align-items: center;
+   /*border-radius: 10px;*/
+
+}
+
+
+
+.celda-imagen {
+	/*width: 100px;*/
+	width: 15%;
+	display: inline-block;
+	/*background-color: white;*/
+
+}
+
+.img_recurso {
+	width: 60px;
+	justify-content: center;
+	/*text-align: center;*/
+	align-content: center;
+	flex-direction: column;
+}
+
+.celda-nombre {
+	/*height: 86px;*/
+	/*width: 250px;*/
+	width: 45%;
+	display: inline-block;
+}
+
+.nombre-titulo {
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+.celda-estado {
+	/*width: 200px;*/
+	width: 17%;
+	/*display: inline-block;*/
+	font-size: 1.2em;
+	border: 0px 1px solid black;
+	display: inline-flex;
+	/*padding: 0 0 20% 0;*/
+	/*vertical-align: center;*/
+	/*justify-content: center;
+	/*text-align: center;*/
+	/*align-content: center;
+	flex-direction: column;*/
+}
+
+.celda-reserva {
+	/*width: 200px;*/
+	width: 17%;
+	display: inline-flex;
+}
+
+.btn_reserva, .btn_reserva_NA {
+      font-size: 1.0em;
+      text-align: center;
+      text-decoration: none;
+      border: 1px solid black;
+      border-radius: 24px;
+      padding: 7px 12px;
+      margin: 4px 2px;
+      background-color: white;
+      display: inline-flex;
+	justify-content: center;
+	/*text-align: center;*/
+	align-content: center;
+	flex-direction: column;
+    }
+
+    .btn_reserva {
+      cursor: pointer;
+      /*padding: 2px;*/
+      -webkit-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+			outline: none;
+    }
+
+    .btn_reserva:hover {
+      background-color: #34495E; /* Green */
+      color: white;
+    }
+
+    .btn_reserva_NA {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+	.btn_reserva:active {
+		outline: none;
+	}
+
+.si_reserva {
+	/*background-color: green;*/
+	/*border-top: 1px solid black;*/
+	border-bottom: 1px solid black;
+}
+
+.no_reserva {
+	border-bottom: 1px solid black;
+	/*border: 1px solid black;*/
+	/*background-color: red;*/
+}
+
+.celda-estado-negativo {
+	color: red;
+	font-weight: bold;
+	/*text-decoration: underline;*/
+}
+
+.celda-estado-positivo {
+	color: green;
+	font-weight: bold;
+}
+
+
+/* -----------------------------------------------------------------------*/
+/* REGISTROS INCIDENCIAS */
+
+.registro-incidencia {
+	width: 100%;
+	display: inline-flex;
+	margin-bottom: 40px;
+	height: 90px;
+	display: flex;
+   	justify-content: center;
+   	align-items: center;
+   /*border-radius: 10px;*/
+}
+
+.celda-i-nombre {
+	width: 30%;
+}
+
+.incidencia-titulo {
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+.grado-critico {
+	color: red;
+	font-size: 1.2em;
+}
+
+.grado-medio {
+	color: orange;
+	font-size: 1.2em;
+}
+
+.grado-bajo {
+	color: blue;
+	font-size: 1.2em;
+}

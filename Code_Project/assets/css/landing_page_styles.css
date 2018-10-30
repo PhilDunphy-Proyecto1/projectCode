@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url(../img/bg_main_lp_3.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.container {
+  margin-top: 220px;
+  text-align: center;
+  font-family: "Source Sans Pro", sans-serif;
+}
+h1 {
+  color: lightgray;
+  font-weight: 200;
+  font-size: 500%;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+p {
+  color: lightgrey;
+  font-weight: lighter;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.btn {
+  border-radius: 12px;
+  color: silver;
+  font-size: 150%;
+  padding: 10px 20px;
+  border: silver solid 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.btn:hover {
+  color: silver;
+  border: silver solid 3px;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 300%;
+  }
+  p {
+    font-size: 17;
+    letter-spacing: 5px;
+  }
+  .btn {
+    font-size: 80%;
+  }
+}
